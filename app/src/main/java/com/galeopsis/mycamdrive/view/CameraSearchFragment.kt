@@ -59,7 +59,6 @@ class CameraSearchFragment : Fragment() {
         validate(recyclerView)
     }
 
-
     private fun validate(recyclerView: RecyclerView) {
         context?.let { isOnline(it) }
         if (context?.let { isOnline(it) } == true) {
@@ -87,11 +86,18 @@ class CameraSearchFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_settings -> {
+                goToProfile()
                 Log.d("API123", "done")
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun goToProfile() {
+        activity?.supportFragmentManager?.beginTransaction()
+            ?.replace(R.id.container, Profile.newInstance())
+            ?.commitNow()
     }
 
     private fun initCameras(

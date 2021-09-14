@@ -16,4 +16,7 @@
     <string name="enterBtbText">Войти</string>
     <string name="password">пароль</string>
     <string name="check_connection">Проверьте интернет соединение!</string>
+    <string name="profile">Профиль пользователя:</string>
+    <string name="user">user</string>
+    <string name="email">email</string>
 </resources>

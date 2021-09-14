@@ -21,5 +21,6 @@ data class Camera(
     @SerializedName("stream_url")
     val streamUrl: Any?,
     val timezone: Timezone,
-    val status: CameraData
+    val status: CameraData,
+    val profile: Profile
 )
