@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_margin">15dp</dimen>
+    <dimen name="app_marginStart">15dp</dimen>
+    <dimen name="app_margin_top">15dp</dimen>
+</resources>
