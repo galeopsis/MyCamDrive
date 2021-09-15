@@ -40,4 +40,16 @@ class MainViewModel(
             }
         }
     }
+
+    fun logout() {
+        viewModelScope.launch {
+            try {
+                _loadingState.value = LoadingState.LOADING
+                camDriveRepository.logout()
+                _loadingState.value = LoadingState.LOADED
+            } catch (e: Exception) {
+                _loadingState.value = LoadingState.error(e.message)
+            }
+        }
+    }
 }

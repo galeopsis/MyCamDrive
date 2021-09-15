@@ -42,12 +42,6 @@ class Profile : Fragment() {
         })
     }
 
-    private fun goToSearchFragment() {
-        activity?.supportFragmentManager?.beginTransaction()
-            ?.replace(R.id.container, CameraSearchFragment.newInstance())
-            ?.commitNow()
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

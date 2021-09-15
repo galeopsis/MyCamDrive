@@ -85,8 +85,18 @@ class CameraSearchFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_settings -> {
+            R.id.action_profile -> {
                 goToProfile()
+                Log.d("API123", "done")
+                true
+            }
+            R.id.action_exit -> {
+                mainViewModel.logout()
+                Log.d("API123", "done")
+                true
+            }
+            R.id.action_settings -> {
+                goToSettingsFragment()
                 Log.d("API123", "done")
                 true
             }
@@ -94,11 +104,6 @@ class CameraSearchFragment : Fragment() {
         }
     }
 
-    private fun goToProfile() {
-        activity?.supportFragmentManager?.beginTransaction()
-            ?.replace(R.id.container, Profile.newInstance())
-            ?.commitNow()
-    }
 
     private fun initCameras(
         cams: ArrayList<Camera>,
@@ -163,6 +168,18 @@ class CameraSearchFragment : Fragment() {
     private fun goToDetailsFragment() {
         activity?.supportFragmentManager?.beginTransaction()
             ?.replace(R.id.container, CameraDetailsFragment.newInstance())
+            ?.commitNow()
+    }
+
+    private fun goToSettingsFragment() {
+        activity?.supportFragmentManager?.beginTransaction()
+            ?.replace(R.id.container, SettingsFragment.newInstance())
+            ?.commitNow()
+    }
+
+    private fun goToProfile() {
+        activity?.supportFragmentManager?.beginTransaction()
+            ?.replace(R.id.container, Profile.newInstance())
             ?.commitNow()
     }
 

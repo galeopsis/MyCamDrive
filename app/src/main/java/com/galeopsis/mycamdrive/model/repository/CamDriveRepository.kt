@@ -34,4 +34,11 @@ class CamDriveRepository(
             }
         }
     }
+
+    suspend fun logout() {
+        withContext(Dispatchers.IO) {
+            val userLogin = camDriveApi.logout()
+
+        }
+    }
 }
